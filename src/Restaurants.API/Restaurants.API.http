@@ -1,0 +1,95 @@
+@token = CfDJ8CrlC38bAJlIpIFpERtlMWz7yRI9vbDzwRGjZCFlSCNwRSPIVYgi_bhCFg8n4mXF9eXgYwiKkYFOAC1R5iMHoeftKl-qXHe1JnQri0_vMlWGmaRcMrsolaSWt6tnEzD7WvKKGuxTxksqRSdNbizMFZg1lqR50SXkzV7LcN7GyWX9Rz6yfcvhSXUeZV90GKGP-65m22d2csMdruVMM8XijppmTJj8_zXKgXh_cDn98cDRxCXqJndtb4WzLQiCvse1GpKTgEfDGZDv9bp52FYnI440dwUmJuxpUxP9VcRex-_pP1-pQ5ObW26uzdPmtG-bxpmKjb-plqTo-MWnMdiCx4aDqZWOiyiB6bA8uhbHcO-Ed21CaLnYKoCAxklLIDxARk3Dtb94GHFND_dXWCr4cyAsQbpSRI7DsbvUa7My5PonAKtmDdWql1TiP8VqgReXlxKXqaHzwjGvsNyPkbpJIPVoGNqaOSKy7Jww4FNoksydz2Y-GGTbZJLzHiVpsE5bJC0jvGpGn9gQud5FcWMfONmlHQ7a3BzRF70R7NtXbNPCgT7sCpfubPCUqhhc4OWmxcjJ7fVCCfMajFsB07TXfVM5jsDcOHvqRdpk5quxairwUi2kEm_bGGW5od1VDgqTrRj_Uu-mZGW6D7qdo9MgDoKVHEKfLGcv9jGWjD6qjabCjq_O5I2eATJhnn3SBdBUYYWrETBULnDZC2llJhMR4oZu0Qxb2tFWXGcnQJzwldzFqS4fezdxoe1U08aWDwtsxUrPWnJIS0sY0mcGPjU59xI
+@RestaurantsAPI_HostAddress = https://localhost:7056
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1
+Authorization: Bearer {{token}}
+
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/5
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "Name": "Restaurant owner",
+  "Description": "Restaurant 5 Description",
+  "Category": "Fast Food",
+  "HasDelivery": true,
+  "ContactEmail":"info@gmail.com",
+  "ContactNumber":"1234567890",
+  "City":"City 5",
+  "Street":"Street 5",
+  "PostalCode":"41-234"
+}
+
+
+###
+
+PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/8
+Content-Type: application/json
+
+{
+    "Name": "Restaurant rrrr",
+    "Description": "Restaurant 1 Description Updated",
+    "HasDelivery": true,
+    "Category": "123"
+
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants/1/dishes
+Content-Type: application/json
+{
+  "Name": "Dish 3",
+  "Description": "Dish 3 Description",
+  "Price": 10.99,
+  "KiloCalories": 500
+
+}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1/dishes
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1/dishes/2
+
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/23/dishes
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/register
+Content-Type: application/json
+{
+
+"email": "user@test.com",
+"password": "Testpassword1!"
+
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/login
+Content-Type: application/json
+{
+
+"email": "admin@test.com",
+"password": "Testpassword1!"
+
+}
+
+
+
+
