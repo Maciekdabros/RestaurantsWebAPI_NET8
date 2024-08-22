@@ -19,8 +19,8 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Restore dependencies
-      run: dotnet build --no-restore
+    - name: Build
+      run: dotnet build --no-restore -c Release
     - name: Publish
       run: dotnet publish ./src/Restaurants.API/Restaurants.API.csproj -o ${{env.DOTNET_ROOT}}/api --no-build
     - name: Upload a Build Artifact
